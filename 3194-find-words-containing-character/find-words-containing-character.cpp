@@ -1,21 +1,27 @@
 class Solution {
+private :
+    bool IsXpresent(char x, string word){
+        
+        int index =  word.find(x);
+        if(index != string::npos )
+        return true;
+        else  return false;
+        
+    }
 public:
     vector<int> findWordsContaining(vector<string>& words, char x) {
-        vector<int> Xindices;
-
-        for(int i =0; i<words.size(); i++){
+        vector<int> XIndices;
+        
+        for(int i=0; i<words.size(); i++){
             string word = words[i];
-            for(int j =0; j<word.size(); j++){
-
-                if(word[j]==x){
-                    Xindices.push_back(i);
-                    break;
-                }
-
+           
+            if(IsXpresent(x,word)){
+            XIndices.push_back(i);
             }
+            
         }
 
-        return Xindices;
+        return XIndices;
 
     }
 };
