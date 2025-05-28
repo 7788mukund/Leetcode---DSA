@@ -1,8 +1,7 @@
 class Solution {
 public:
     void duplicateZeros(vector<int>& arr) {
-        int i =0;
-        
+        int i =0;  
         while(i<arr.size()){
             if(arr[i]==0){
                 int j = arr.size()-1;
