@@ -32,3 +32,6 @@ public:
            return -1;
     }
 };
+
+// Mistakes - use proper abs double check situation where abs is needed
+// think at edge cases
