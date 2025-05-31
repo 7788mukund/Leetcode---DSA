@@ -3,12 +3,11 @@ public:
     double minimumAverage(vector<int>& nums) {
 
         // Sc = O(n)
-        // Tc = NlogN + O(N) + NlogN = N log N
+        // Tc = NlogN + O(N) = N log N
 
         // Aproach = sort nums so larger and min element comes 1 and n-1
         //  take two pointer at start and end to calculate the avg of them and
-        //  store in avg array
-        // then sort avg so we can get the minimum element at 0th index;
+       // then we find min element using loop 
 
         vector<double> averages;
 
@@ -25,8 +24,14 @@ public:
             end--;
         }
 
-        sort(averages.begin(), averages.end());
+            double minele = averages[0];
 
-        return averages[0];
+            for(int i =1; i<averages.size(); i++){
+                if(averages[i]<minele){
+                    minele = averages[i];
+                }
+            }
+
+        return minele;
     }
 };
