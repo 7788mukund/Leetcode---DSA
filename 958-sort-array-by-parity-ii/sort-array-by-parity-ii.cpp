@@ -4,8 +4,13 @@ public:
         vector<int> evennum;
         vector<int> oddnum;
 
-
-
+// Tc = O(N)+O(N)+O(N) = O(N)
+// Space complexity = (N)
+// Taking two arrays of even num and odd num  name
+//storing of even values to evennum and odd values oddnum 
+// as we have evena and odd then iterating trough num  at  i = 0 to i+2 positions
+//inserting all even and odd values from the evenum and odd num to nums 
+// returning it
         for(int num :nums){
             if(num%2==0) {
                evennum.push_back(num);
