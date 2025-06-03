@@ -10,7 +10,6 @@ class Solution {
 
 public:
     vector<int> sortArrayByParityII(vector<int>& nums) {
-
         // Tc = O(N)
         // Sc = O(1)
         // Approach - as we are asked to check of even and odd index and add
