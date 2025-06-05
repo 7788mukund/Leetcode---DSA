@@ -1,25 +1,20 @@
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        // Tc = O(N)
-        //Sc = O(N)
 
+        //Tc = O(n)
+        //Sc =O(1)
+        //Calculate the acutal sum of given range with formule
+        // n*n+1/2
+        //subtract current sum from acutal sum we will get out missing number
+        int actual_sum = (nums.size()*(nums.size()+1))/2;
 
-        // Take extra space array of nums+1 size initalisze all to -1
-        vector<int> num(nums.size()+1,-1);
-    // then find out index element and change the value at extra taken array by one
-        for(int i =0; i<nums.size(); i++){
-            num[nums[i]] +=1;
+        int current_sum =0;
+        for(int num: nums){
+            current_sum += num;
         }
 
-
-        // search whweere is the -1 is present return that index
-        for(int i =0; i<num.size(); i++)
-        {
-            if(num[i]==-1){
-                return i;
-            }
-        }
-        return nums.size()+1;
+        return actual_sum-current_sum;
+        
     }
 };
