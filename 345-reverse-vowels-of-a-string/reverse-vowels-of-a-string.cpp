@@ -1,16 +1,11 @@
 class Solution {
      bool isVowel(char ch ){
-     if((ch=='a'||ch=='A'||
+     return (ch=='a'||ch=='A'||
         ch=='e'||ch=='E'||
         ch=='i'||ch=='I'||
         ch=='o'||ch=='O'||
         ch=='u'||ch=='U'
-        )){
-            return true;
-      }
-      else{
-        return false;
-      }
+        );
     }
 public:
     string reverseVowels(string s) {
