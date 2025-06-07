@@ -1,10 +1,14 @@
 class Solution {
 public:
     string interpret(string command) {
+        //Tc = O(N)
         int index1 = 0;
         int index2 = 1;
+        //Sc = O(N)
         string GoalParser = "";
 
+        // Approach - Use two pointer first and second 
+        // check for the given condition and increment the pointers
         while (index1 < command.size()) {
 
             if (command[index1] == 'G') {
