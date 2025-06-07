@@ -1,6 +1,16 @@
 class Solution {
 public:
     bool arrayStringsAreEqual(vector<string>& word1, vector<string>& word2) {
+        //Tc = O(N)'
+        //Sc = O(1)
+
+        // Take two pointer as the string is sorted form means char of word1 and word2
+        // are in same sequence , so lets traverse them
+        // Using one inner and outer pointer for index of string vector and index for the string into that vector to point particular character
+        // comparing each char of the string at ith index and performing the traverse
+        // if match not found then breaking the loop and return false
+        // if they match increment index
+        // if index reaches the size of string 1 then incremating pointer and index value set back to 0
         int pointerword1 = 0;
         int indexword1 = 0;
 
