@@ -7,7 +7,7 @@ public:
         int i =0; int j =0;
 
         bool Ismatched = false;  
-        while(j< typed.size()){
+        while(j < typed.size()){
 
             if(name[i]==typed[j]){
                 i++;
