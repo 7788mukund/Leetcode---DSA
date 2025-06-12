@@ -1,6 +1,8 @@
 class Solution {
 public:
     bool backspaceCompare(string s, string t) {
+        //Tc = O(N)
+        //Sc =O(1)
 
         int i = s.size() - 1;
         int j = t.size() - 1;
@@ -34,10 +36,10 @@ public:
                     break;
             }
 
-            // checking condition if
+            // checking if chracter are same when there is not # found at both index
             if (i >= 0 && j >= 0 && s[i] != t[j])
                 return false;
-
+            // checking if one string is finiesh and other not 
             if ((i >= 0) != (j >= 0))
                 return false;
 
