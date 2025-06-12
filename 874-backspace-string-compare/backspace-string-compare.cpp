@@ -1,71 +1,49 @@
 class Solution {
 public:
     bool backspaceCompare(string s, string t) {
-// Tc = O(N)
-// Sc = O(1)
-
-//Aproach - 
-    // we will travserse from back of string s and t 
-    // keeping the record of # as backspace count 
-    // if we found # then we increment the backspace count
-    // if ith element is  not # then we will we will check backspace count if its 0 then we will add that char to new string result
-// then after that we will check for reaming conditions
-// such as in if else block
-        if (s == t)
-            return true;
-
-        int backspacecountS = 0;
-        string result = "";
 
         int i = s.size() - 1;
-
-        while (i >= 0) {
-
-            if (backspacecountS == 0 && s[i] != '#') {
-                result += s[i];
-                i--;
-            } else if (s[i] != '#' && backspacecountS != 0) {
-                backspacecountS--;
-                i--;
-            } else {
-                backspacecountS++;
-                i--;
-            }
-        }
-
         int j = t.size() - 1;
-        int backspacecountT = 0;
-        string resultT = "";
 
-        while (j >= 0) {
-            if (backspacecountT == 0 && t[j] != '#') {
-                resultT += t[j];
-                j--;
-            } else if (t[j] != '#' && backspacecountT != 0) {
-                backspacecountT--;
-                j--;
-            } else {
-                backspacecountT++;
-                j--;
+        while (i >= 0 || j >= 0) {
+
+            // skiping index where we find # as backspace
+            int skips = 0;
+            while (i >= 0) {
+                if (s[i] == '#') {
+                    skips++;
+                    i--;
+                } else if (skips > 0) {
+                    skips--;
+                    i--;
+                } else {
+                    break;
+                }
             }
+
+            // skipping the # in t and its before char
+            int skipt = 0;
+            while (j >= 0) {
+                if (t[j] == '#') {
+                    j--;
+                    skipt++;
+                } else if (skipt > 0) {
+                    skipt--;
+                    j--;
+                } else
+                    break;
+            }
+
+            // checking condition if
+            if (i >= 0 && j >= 0 && s[i] != t[j])
+                return false;
+
+            if ((i >= 0) != (j >= 0))
+                return false;
+
+            i--;
+            j--;
         }
-
-        int start = 0, end = result.size() - 1;
-
-        while (start < end) {
-            swap(result[start], result[end]);
-            start++;
-            end--;
-        }
-
-        start = 0;
-        end = resultT.size() - 1;
-        while (start < end) {
-            swap(resultT[start], resultT[end]);
-            start++;
-            end--;
-        }
-
-        return result == resultT;
+        return true;
     }
 };
