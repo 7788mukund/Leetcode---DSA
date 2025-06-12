@@ -1,6 +1,16 @@
 class Solution {
 public:
     bool backspaceCompare(string s, string t) {
+// Tc = O(N)
+// Sc = O(1)
+
+//Aproach - 
+    // we will travserse from back of string s and t 
+    // keeping the record of # as backspace count 
+    // if we found # then we increment the backspace count
+    // if ith element is  not # then we will we will check backspace count if its 0 then we will add that char to new string result
+// then after that we will check for reaming conditions
+// such as in if else block
         if (s == t)
             return true;
 
