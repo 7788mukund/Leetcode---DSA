@@ -3,19 +3,13 @@ public:
     int numJewelsInStones(string jewels, string stones) {
 
 
-        int count= 0;
+        int countt= 0;
         for(char jwel : jewels){
 
-            for(char stone : stones){
-
-                if(jwel==stone){
-                    count++;
-                    
-                }
-            }
+        countt += count(stones.begin(),stones.end(),jwel);
         }
         
 
-        return count;
+        return countt;
     }
 };
