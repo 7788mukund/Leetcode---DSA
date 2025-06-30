@@ -2,21 +2,12 @@ class Solution {
 public:
     char findTheDifference(string s, string t) {
 
-        sort(begin(t), end(t));
-        sort(begin(s), end(s));
+        char result = 0;
 
-        int ptrs = 0, ptrt = 0;
+        for(char ch : s) result ^= ch;
 
-        while (ptrs < s.size() && ptrt < t.size()) {
+        for(char cha : t ) result^= cha;
 
-            if (s[ptrs] == t[ptrt]) {
-                ptrs++;
-                ptrt++;
-            } else {
-                ptrs++;
-            }
-        }
-
-        return t[ptrt];
+     return result;  
     }
 };
