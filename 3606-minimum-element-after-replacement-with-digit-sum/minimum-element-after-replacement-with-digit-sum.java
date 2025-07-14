@@ -1,6 +1,6 @@
 class Solution {
     public int minElement(int[] nums) {
-
+        int mini = Integer.MAX_VALUE;
         for(int i = 0; i<nums.length; i++){
 
             int rem = 0;
@@ -9,14 +9,11 @@ class Solution {
                 nums[i]/=10;   
             }
              nums[i] = rem;
+             mini = Math.min(mini,nums[i]);
+
+
         }
 
-        int answer = nums[0];
-        for(int i = 1; i<nums.length; i++){
-            answer = Math.min(nums[i], answer); 
-        }
-
-    return answer;
-        
+        return mini;
     }
 }
