@@ -12,9 +12,10 @@ class Solution {
                 mynum.add(nums[i]);
         }
 
-        if (mynum.size() == 0) {
-            Arrays.sort(nums);
-            return nums[nums.length - 1];
+        int maxsum = nums[0];
+
+        for(int i = 1; i<nums.length; i++){
+            maxsum = Math.max(nums[i],maxsum);
         }
 
         int sum = 0;
@@ -22,6 +23,8 @@ class Solution {
             sum += num;
         }
 
+        if(mynum.size()==0) return maxsum;
+        else
         return sum;
     }
 }
